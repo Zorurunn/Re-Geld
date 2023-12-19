@@ -11,10 +11,18 @@ const inter = Inter({ subsets: ["latin"] });
 // }
 
 // const DataContext = createContext();
-const Pro = createContext();
+// const Pro = createContext();
+
+const GameContext = createContext();
 
 export default function RootLayout({ children }) {
   const [isHidden, setIsHidden] = useState(true);
+  // const [isDone, setIsDone] = useState([true, false, false]);
+  let map = {
+    0: true,
+    1: false,
+    2: false,
+  };
   const [is, isSet] = useState(true);
 
   // const [isDone, setIsDone] = useState([true, false, false]);
@@ -22,11 +30,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Pro.Provider value={{ is, isSet }}>{children}</Pro.Provider>
+        <GameContext.Provider
+          value={{
+            isHidden,
+            setIsHidden,
+            map,
+          }}
+        >
+          {children}
+        </GameContext.Provider>
       </body>
     </html>
   );
 }
 
 // export const useData = () => useContext(DataContext);
-export const usePro = () => useContext(Pro);
+// export const usePro = () => useContext(Pro);
+export const useGame = () => useContext(GameContext);

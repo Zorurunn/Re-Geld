@@ -5,7 +5,7 @@ export function SignInButton(props) {
   return (
     <div>
       <button
-        class="btn btn-active btn-primary w-full text-white bg-sky-700 border-none"
+        className="btn btn-active btn-primary w-full text-white bg-sky-700 border-none"
         onClick={setIsHidden((prev) => !prev)}
       >
         {props.name}

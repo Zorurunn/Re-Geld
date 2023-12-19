@@ -2,11 +2,11 @@ import { useData } from "@/app/layout";
 import Link from "next/link";
 
 export function SignUpButton(props) {
-  const { setIsHidden } = useData();
+  // const { setIsHidden } = useData();
   return (
     <div>
       <Link href={"/currency"}>
-        <button class="btn btn-active btn-primary w-full text-white bg-sky-700 border-none">
+        <button className="btn btn-active btn-primary w-full text-white bg-sky-700 border-none">
           {props.name}
         </button>
       </Link>

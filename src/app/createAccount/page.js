@@ -6,7 +6,7 @@ import { useData } from "../layout";
 import { SignUpButton } from "@/components/SignUpButton";
 
 export default function CreateAccount() {
-  const { setIsHidden } = useData();
+  // const { setIsHidden } = useData();
   return (
     <Container>
       <div className="h-full grid grid-cols-2 w-full">

@@ -1,74 +1,54 @@
+"use client";
 import { VectorSvg } from "@/components/SVG/VectorSvg";
 // import { useData } from "../layout";
-import { useData } from "@/app/layout";
+import { useData, useGame, usePro } from "@/app/layout";
+import LogoName from "@/components/LogoName";
+import Step from "@/components/Step";
+import { MoneySvg } from "@/components/SVG/MoneySvg";
+import { ConfirmButton } from "@/components/ConfirmButton";
+import { Container } from "@/components/Container";
 
 export default function Currency() {
+  // const { is, isSet } = usePro();
+  // console.log(is);
+
   // const { isDone, setIsDone } = useData();
   // const { setIsHidden } = useData();
-
+  // let done = true;
   return (
-    <div>
-      <div className=" flex gap-[5px] justify-center">
-        <div className=" flex jystify-center items-center">
-          <VectorSvg />
-        </div>
-        <div className="text-[24px] flex jystify-center items-center">Geld</div>
-      </div>
-    </div>
-  );
-}
-
-{
-  /* <div>
-<div className=" flex flex-col gap-[5px] justify-center items-center">
-  <div className=" flex jystify-center items-center">
-    <VectorSvg />
-  </div>
-</div>
-</div> */
-}
-
-{
-  /* <div className="text-[24px] flex jystify-center items-center">Geld</div>
-      <div className="flex">
-        <div>
-          <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
-        </div>
-        <div className="flex justify-center items-center">
-          <div className="w-[120px] h-2 bg-blue-600"></div>
-        </div>
-        <div>
-          <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
-        </div>
-        <div className="flex justify-center items-center">
-          <div className="w-[120px] h-2 bg-blue-600"></div>
-        </div>
-        <div>
-          <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
-        </div> */
-}
-
-{
-  /* <div className="relative flex flex-col">
-          <div className="w-6 h-6 left-0 top-0 absolute bg-blue-600 rounded-full"></div>
-          <div class="w-5 left-[2px] top-[2px] absolute text-center text-white text-sm font-normal font-['Roboto'] ">
-            1
+    <Container>
+      <div className="flex w-full h-full justify-center">
+        <div className="flex flex-col  pt-[40px] w-[40%]">
+          <div className="flex flex-col justify-center items-center gap-[48px] mb-[148px]">
+            <LogoName />
+            <Step />
           </div>
-          <div class="text-center text-slate-900 text-sm font-normal font-['Roboto'] leading-tight">
-            Currency
+          <div className="flex flex-col justify-center items-center gap-[10px] mb-[24px]">
+            <MoneySvg />
+            <div className="text-[24px]"> Select base currency</div>
           </div>
-        </div> */
-}
-{
-  /* <div class="w-14 h-12 flex-col justify-start items-center gap-1 inline-flex">
-          <div class="w-6 h-6 relative">
-            <div class="w-6 h-6 left-0 top-0 absolute bg-blue-600 rounded-full"></div>
-            <div class="w-5 left-[2px] top-[2px] absolute text-center text-white text-sm font-normal font-['Roboto'] leading-tight">
-              1
+
+          <div className="flex flex-col gap-[10px] mb-[32px]">
+            <div className="w-full rounded-[5px] bg-gray-200 flex justify-center">
+              <select
+                className="w-[90%] h-[40px] rounded-[5px] bg-gray-200 pr-[80px] text-[18px]"
+                name="currency"
+              >
+                <option value="2">MNT - Mongolian Tugrik</option>
+                <option value="1">JP - Japanese Yen</option>
+                <option value="0">Zoloo</option>
+              </select>
+            </div>
+            <div className="text-[12px]">
+              Your base currency should be the one you use most often. All
+              transaction in other currencies will be calculated based on this
+              one{" "}
             </div>
           </div>
-          <div class="text-center text-slate-900 text-sm font-normal font-['Roboto'] leading-tight">
-            Currency
-          </div>
-        </div> */
+
+          <ConfirmButton name="Confirm" link="/balance" />
+        </div>
+      </div>
+    </Container>
+  );
 }

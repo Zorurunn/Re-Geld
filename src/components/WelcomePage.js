@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { VectorSvg } from "./SVG/VectorSvg";
-import { usePro } from "@/app/page";
+import { useGame } from "@/app/layout";
+// import { usePro } from "@/app/layout";
 
 export function WelcomePage() {
-  const data = [{}, {}];
-  const { is, isSet } = usePro();
-  console.log(is);
+  const { isHidden, setIsHidden } = useGame();
+
   return (
     <div className="h-full grid grid-cols-2 w-full">
       <div className="flex justify-center items-center ">
@@ -47,7 +47,6 @@ export function WelcomePage() {
           </div>
         </div>
       </div>
-
       <div className="bg-sky-700"></div>
     </div>
   );
