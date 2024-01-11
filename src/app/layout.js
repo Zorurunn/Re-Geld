@@ -17,7 +17,8 @@ const GameContext = createContext();
 
 export default function RootLayout({ children }) {
   const [isHidden, setIsHidden] = useState(true);
-  // const [isDone, setIsDone] = useState([true, false, false]);
+  const [isDone, setIsDone] = useState([true, false, false]);
+  const [url, setUrl] = useState("");
   let map = {
     0: true,
     1: false,
@@ -35,6 +36,8 @@ export default function RootLayout({ children }) {
             isHidden,
             setIsHidden,
             map,
+            url,
+            setUrl,
           }}
         >
           {children}
